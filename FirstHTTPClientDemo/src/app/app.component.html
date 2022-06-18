@@ -1,0 +1,67 @@
+<h1 class="topic">HTTPClient</h1>
+<ul>
+  <li>HttpClient is used for performing HTTP requests and responses.</li>
+  <li>The HttpClient service is available in the @angular/common/http package.</li>
+  <li>The new HttpClient service is included in the Http Client module which is used to initiate HTTP request and responses in Angular apps</li>
+  <li>The HttpClientModule needs to be imported into the module. Usually in the app module.</li>
+  <li>HttpClient also gives other useful functionality like interceptors, headers etc.</li>
+</ul>
+
+<h2 class="topic">HttpClient Methods</h2>
+<ul>
+  <li>get()</li>
+  <li>post()</li>
+  <li>put()</li>
+  <li>delete()</li>
+  <li>head()</li>
+  <li>jsonp()</li>
+  <li>options()</li>
+  <li>patch()</li>
+</ul>
+
+<h2 class="topic">Benefits of HttpClient</h2>
+<ul>
+  <li>HttpClient includes observable APIs</li>
+  <li>HttpClient can have the HTTP Headers in options</li>
+  <li>HttpClient includes the highly testability features</li>
+  <li>HttpClient includes typed request</li>
+  <li>HttpClient includes response objects</li>
+  <li>HttpClient includes request and response interception</li>
+  <li>HttpClient inslude error handling</li>
+</ul>
+
+<h2 class="topic">CRUD Operations using HttpClient</h2>
+<ul>
+  <li><span class="head">Create - </span>usually a POST method call</li>
+  <li><span class="head">Read - </span>usually a GET method call</li>
+  <li><span class="head">Update - </span>usually a PUT method call</li>
+  <li><span class="head">Delete - </span>is a Delete method call</li>
+  <ul>
+    <li>Technically - we should NEVER delete anything. Only soft deletes which means setting a flag or so</li>
+  </ul>
+</ul>
+
+<h2 class="topic">Setting up Local Server - Multiple Options</h2>
+<ul>
+  <li>Using a Mock API Server like json-server
+    <ul>
+      <li>We will use this in our examples</li>
+      <li>I will be sharing MEAN stack tutorial using Node and ExpressJS to setup APIs</li>
+    </ul>
+  </li>
+  <li>Setup using XAMPP or WAMP or MAMP</li>
+  <li>Setup using Python based module SimpleHTTP</li>
+  <li>Setup using Node and Express JS</li>
+  <li>Setup using IIS or Apache etc</li>
+  <li class="note">There is NO right away to set up a Server. It all depends on your application infrastructure</li>
+</ul>
+
+HttpClient
+1. We use HttpClient to make request and process response of HTTP calls
+2. We make HTTP calls to server-endpoints or APIS
+3. To work with HttpClient we need to import HttpClientModule in our App Module
+      WITHOUT this step-our HTTP will not work
+4. We will need to import Httpclient in our component if we want to make HTTP calls
+5. As best practice -we usually make HTTP calis in our services
+      However technically there is no restriction on where you can use it.
+                     

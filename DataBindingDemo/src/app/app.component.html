@@ -1,0 +1,35 @@
+<!-- Data Binding Types -->
+<h1>Data Binding Techniques</h1>
+
+<!-- Interpolation -->
+<u><h2>Interpolation</h2></u>
+<p>Using Interpolation :- {{inter}}</p>
+<p>Calculation using Interpolation of 34+56 :- {{34+56}}</p>
+<img src="{{url}}" alt="">
+<br>
+<h2></h2>
+
+<!-- Property Binding -->
+<u><h2>Property Binding</h2></u>
+<input type="text" [disabled]="disabledBox" [value]="propBind">
+<br><br>
+<input type="text" disabled={{disabledBox}} bind-value="propBinds">
+<br><br>
+<button (click)="propBinding()">Enable Box</button>
+
+
+<!-- Event Binding -->
+<u><h2>Event Binding</h2></u>
+<button (click)="eventBinding()">EventBindedBox</button>
+{{eventbind}}
+<br><br>
+
+<!-- Attribute Binding -->
+<u><h2>Attribute Binding</h2></u>
+<br><br>
+
+<!-- Two Way Binding -->
+<u><h2>Two-Way Binding</h2></u>
+<input type="text" [(ngModel)]="data">
+<h1>{{data}}</h1>
+

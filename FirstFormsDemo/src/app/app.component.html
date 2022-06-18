@@ -1,0 +1,241 @@
+
+<h1>Forms in Angular</h1>
+<ol>
+  <li>Forms are an integral and essential building blocks of "almost" apps</li>
+  <li>Common form examples we can see are:
+    <ul style="list-style-type: disc;">
+      <li>Login</li>
+      <li>Forgot</li>
+      <li>Register</li>
+      <li>Checkout Form</li>
+      <li>Contact Us</li>
+    </ul>
+  </li>
+  <li>Forms allow us to gather information and data from users</li>
+  <li>Good way to interact with the users and almost all websites will need forms in some or other way</li>
+  <li>We can use any CSS framework of our choice - Bootstrap or Material Design </li>
+</ol>
+
+<b><h2>Flow</h2></b>
+<ul>
+  <li>First is app.module.ts add routingmodule</li>
+  <li>Second is designing HTML Form</li>
+</ul>
+
+<hr>
+<!-- Types of Angular Forms -->
+<h2>Two Types of Forms in Angular</h2>
+<ul>
+  <li>Template Driven Forms
+    <ol>
+      <li>Easy to use</li>
+      <li>Template driven forms are simple and straight forward</li>
+      <li>All the validations, form elements are all defined in the template file</li>
+      <li>We will need to import Forms Module in app module to work with Template driven forms</li>
+    </ol>
+    <br>
+  </li>
+  <li>Reactive Forms(also known as Dynamic Forms)
+    <ol>
+      <li>All the form elements, user interactions and validations are handled in the component class</li>
+      <li>We will make use of Angular's built in formGroup and form Control</li>
+      <li>Can control better data binding</li>
+      <li>Exclusive define custom regular expression patterns of error handling</li>
+      <li>We will need to import Reactive Forms Module in our app module</li>
+      <li>Very flexible and allows users to define, develop complex requirements of forms</li>
+      <li> More logic in the component class and less in HTML mark up itself</li>
+    </ol>
+  </li>
+</ul>
+
+<h2>Angular framework support for Forms</h2>
+<ul style="list-style-type: disc;">
+  <li>Two Data Binding</li>
+  <li>Change Tracking</li>
+  <li>Validations</li>
+  <li>Error Handling</li>
+  <li>Unit Testing</li>
+</ul>
+
+<hr>
+<h2>Which is better – Template driven Forms or Reactive Forms?</h2>
+<ul>
+  <li>
+    <h4>Template Driven Forms</h4>
+    <ol>
+      <li>If your application forms are simple straight forward</li>
+      <li>Fixed static form fields and elements</li>
+      <li>No complex validations or pattern matching</li>
+    </ol>
+  </li>
+  <li>
+    <h4>Reactive Forms</h4>
+    <ol>
+      <li>If your application forms are complex</li>
+      <li>Uses multiple dynamic components</li>
+      <li>Advanced validation requirements</li>
+      <li>Dependent form elements</li>
+      <li>Dynamic form generation based on user preferences</li>
+    </ol>
+  </li>
+</ul>
+
+<hr>
+<h2>Template Driven forms: Features</h2>
+<ul>
+  <li>Easy to use</li>
+  <li>Template driven forms are simple and straight forward</li>
+  <li>All the validations, form elements are all defined in the template file</li>
+  <li>Forms are tracked automatically</li>
+  <li>Tracked form data traverses via various states (pristine etc)</li>
+  <li>Uses Two-Way Data Binding techniques to bind data</li>
+  <li>Most of the code resides in template file</li>
+  <li>Validations are mostly the default HTML5 validations</li>
+  <li>Minimal component code as most of the code is in template file</li>
+  <li>Unit testing will be a challenge</li>
+</ul>
+<h3>How to use Template Driven Forms</h3>
+<ul>
+  <li> We will need to import Forms Module in app module to work with Template driven forms</li>
+  <li>
+    <h5>Step #1 - Import and Add in the FormsModule in the app.module.ts</h5>
+    <ul>
+      <li>For template driven forms – Forms Module needs to be imported</li>
+      <li>If we do NOT import this - we will get error when doing two way data binding</li>
+      <li>Add the module into the array list of imports</li>
+    </ul>
+  </li>
+  <br>
+  <li><h5>Step #2 - Create the form in app.component.html</h5>
+    <ul>
+      <li><b>ngForm</b>
+        <ul>
+          <li>Form name as template variable using "#" for e.g #loginForm</li>
+        </ul>
+      </li>
+      <li><b>ngModel</b>
+        <ul>
+          <li>Every form field should have a "name" attribute and ng Model attached to it</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2>Using Template driven Forms</h2>
+<h4>Ways to Handle Validations in Template Driven Forms</h4>
+<ul>
+  <li>
+    Highligting the errors input<br>
+    <code ng-non-bindabel>ng-invalid.ng-touched{{'{'}}background-color:red{{'}'}}</code></li>
+  <li>
+    Disabling the Submit button<br>
+    <code ng-non-bindabel>By adding attribute [disabled]="!formName.valid”</code></li>
+  <li>
+    Custom Field Level Validation - Show Hide Errors Messages<br>
+    <code>&lt;span *nglf="firstname.touched && !firstname.valid"&gt;Please enter email&lt;span&gt;</code></li>
+</ul>
+<hr>
+
+<app-signin></app-signin>
+
+<br>
+<hr>
+<br>
+
+<h2>Reactive Forms</h2>
+<ul>
+  <li>Experience is similar to Template Driven Forms
+    <ul>
+      <li><code>Whats different is how we implement, design and handle the form and the data</code></li>
+    </ul>
+  </li>
+  <li>All the form elements, user interactions and validations are handled in the component class</li>
+  <li>We will make use of Angular's built in formGroup and form Control</li>
+  <li>Using Reactive Forms we can control better data binding</li>
+  <li>Exclusive define custom regular expression patterns of error handling</li>
+  <li>We will need to import Reactive FormsModule in our app module</li>
+  <li>Very flexible and allows users to define, develop complex requirements of forms</li>
+  <li>More logic in the component class and less in HTML mark up itself</li>
+  <li>Angular maintains state information of the Forms at all times
+    <ul>
+      <li>ng-touched</li>
+      <li>ng-untouched</li>
+      <li>ng-dirty</li>
+      <li>ng-pristine</li>
+      <li>ng-valid</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>How to use Reactive Forms</h3>
+<ul>
+  <li> We will need to import Forms Module in app module to work with Template driven forms</li>
+  <li>
+    <h5>Step #1 - Import and Add in the Reactive FormsModule in the app.module.ts</h5>
+    <ul>
+      <li>For template driven forms - Reactive FormsModule needs to be imported</li>
+      <li>If we do NOT import this - we will get error</li>
+      <li>Add the module into the array list of imports</li>
+    </ul>
+  </li>
+  <br>
+  <li><h5>Step #2 - Create the form in app.component.html</h5>
+    <ul>
+      <li><b>FormGroup</b>
+        <ul>
+          <li>We need to use the directive FormGroup for the entire form and give it a name</li>
+        </ul>
+      </li>
+      <li><b>formControlName</b>
+        <ul>
+          <li>Every form field should have a “formControlName” attribute</li>
+        </ul>
+      </li>
+    </ul>
+  </li><br>
+  <li><h5>Step #3 - In the component class - import the required modules</h5>
+    <ul>
+      <li>import {{'{'}} Component, Onlnit {{'}'}} from '@angular/core';</li>
+      <li>import {{'{'}} Form Builder, FormGroup, Form Control, NgForm, Validators{{'}'}} from '@angular/forms';</li>
+    </ul>
+  </li><br>
+  <li><h5>Step #4 - Inject the Form Builder in the constructor</h5>
+    <ul>
+      <li>constructor(private formBuilder: FormBuilder)
+      </li>
+    </ul>
+  </li><br>
+  <li><h5>Step #5 - Create the form instance</h5>
+    <ul>
+      <li>this.register Form = formBuilder.group{{'({'}}</li>
+      <li>fname: new Form Control(),</li>
+      <li> Iname: new Form Control()</li>
+      <li>});</li>
+    </ul>
+  </li>
+  
+</ul>
+<h2>Using Reactive Forms</h2>
+<h4>Ways to Handle Validations in Reactive Forms</h4>
+<ul>
+  <li>
+    Highligting the errors<br>
+    <code ng-non-bindabel>input.ng-invalid.ng-touched{{'{'}}background-color:red{{'}'}}</code></li>
+  <li>
+    Disabling the Submit button<br>
+    <code ng-non-bindabel>By adding attribute [disabled]="!formName.valid”</code></li>
+  <li>
+    Custom Field Level Validation - Show Hide Errors Messages<br>
+    <!-- <code>&lt;span *nglf="firstname.touched && !firstname.valid"&gt;Please enter email&lt;span&gt;</code></li> -->
+    
+</ul>
+
+
+<hr>
+
+
+
+
+<app-checkout></app-checkout>
+

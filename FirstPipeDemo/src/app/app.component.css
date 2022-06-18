@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;1,300&display=swap');
+*{
+    font-family: 'Ubuntu', sans-serif;
+}
+.customPipe{
+    border: 2px solid red;
+    background-color: rgb(245, 206, 206);
+    color: crimson;
+}

@@ -1,0 +1,25 @@
+<!-- <h1>Parent Component</h1>
+<button (click)="toggleChild()">Toggle Child</button>
+<input type="text" [(ngModel)]="firstName">
+<hr>
+<app-child *ngIf="isChild" [firstName]="firstName">
+    <h2 #parentContent>This is content from parent</h2>
+</app-child> -->
+
+<h1>@Input Decorator usage</h1>
+<p>The @Input() decorator in a child component or directive signifies that the property can receive its value from its
+    parent component.</p>
+
+<h2>Parent Component</h2>
+
+<!-- <app-child [EmployeeName]="Ename"></app-child> -->
+<br><hr>
+
+<h1>@Output Decorator usage</h1>
+<p>The @Output() decorator in a child component or directive lets data flow from the child to the parent.
+</p>
+
+<h2>Parent Component</h2>
+<h4>{{childDataReceived}}</h4>
+<hr>
+<app-child (childStringData)="ReceiveData($event)"></app-child>

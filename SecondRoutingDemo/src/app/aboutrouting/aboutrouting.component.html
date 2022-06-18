@@ -1,0 +1,66 @@
+<h1>Routing</h1>
+<ol>
+  <li>All the routes/paths or navigation requirements in amgular are handheld by angular router package</li>
+  <li>We navigate from one component view to other using the routes</li>
+  <li>we can configure various types of routes
+    <ul>
+      <li>default routes</li>
+      <li>child routes</li>
+      <li>wild card routes</li>
+      <li>query params</li>
+      <li>url segments</li>
+      <li>lazy loading</li>
+    </ul>
+  </li>
+  <li>We create a routes array and whenever user requests a toute it will search in the routes array</li>
+  <li>Router is Singleton - which means there is only one instance of angular router per application</li>
+</ol>
+
+<b><h2>Angular Routing - Routing Strategies</h2></b>
+<ol>
+  <li>This is extremely important as it ill affect the entire application flow and navigation</li>
+  <li>
+    <ul>
+      <li>/home</li>
+      <li>/dashboard</li>
+      <li>/search?keyword=k1</li>
+      <li>/product/10</li>
+      <li>/product/10/images</li>
+    </ul>
+  </li>
+  <li>PathLocation or HashLocation</li>
+  <li>We need to add this in Providers of our module
+    <ul><li>
+      {{'{'}}provide:LocationStrategy, useClass:HashLocationStrategy{{'}'}}
+    </li></ul>
+  </li>
+  <li>By default - Angular makes use of the PathLocationStrategy</li>
+  <li>With HashLocationStrategy - we will see the # in the URL</li>
+  <li>By default all Angular Apps are using PathLocationStrategy
+    <ol>
+      <li>/home</li>
+      <li>/products</li>
+      <li>/search</li>
+    </ol>
+    <br>
+    <ul>
+      <li>HashLocation</li>
+    </ul>
+    <ol>
+      <li>/#/home //HashLocation</li>
+      <li>/#/products //HashLocation</li>
+    </ol>
+  </li>
+  <li>We can choose any strategy we want for our app</li>
+  <li>There is no constraint or restriction</li>
+</ol>
+
+<b><h2>Routing - Base HREF</h2></b>
+<ul>
+  <li>Every Angular application has MANDATORY base HREF</li>
+  <li>Angular application is a SPA(Single Page Architecture) which means there will be only one HTML file</li>
+  <li>The default base href is set ti "/" the root folder</li>
+  <li>The Base HREF is present in index.html file for all Angular applications</li>
+</ul>
+
+

@@ -1,0 +1,94 @@
+<p>Lorem ipsum dolor sit amet.</p>
+1. Directive is a way to extend our HTML including both view as well as behaviour
+<br>
+2. Directives are used to extend the power of HTML 
+<br>
+3. Mainly 3 types of directives 
+<ul>
+  <li>Component Directive</li>
+  <li>Structural Directive 
+    <ol>
+      <li>*ngIf</li>
+      <li>*ngFor</li>
+      <li>*ngSwitch</li>
+    </ol>
+  </li>
+  <li>Attribute Directive
+    <ol>
+      <li>[ngClass]</li>
+      <li>[ngStyle]</li>
+    </ol>
+  </li>
+</ul>
+4. Examples 
+    AppComponent -> Componnt Directive 
+<br>
+5. Custom Directives :- ng g directive highlight. This is an advanced topic 
+<br><br>
+<hr>
+
+<!-- ---------*ngIf------------- -->
+<h2>*ngIf</h2>
+<b><p>*ngIf without Else Statement</p></b>
+<h3 *ngIf="showHides" [ngStyle]='{color:colorvalue}'>Harsha is a very good boy.</h3>
+<!-- color:"red" Change showHides=false; to showHides=true; to see the above code in action -->
+
+<b><p>*ngIf with Else Statement</p></b>
+<h3 *ngIf="showHide; else showElseMessage" [ngStyle]='{color:colorvalue}'>Without Else message.</h3>
+<ng-template #showElseMessage><u>Show else message</u></ng-template>
+
+<b><p>*ngIf with Then and Else Statement</p></b>
+<h3 *ngIf="showHide; then showThenMessage else showElseMessage" [ngStyle]='{color:colorvalue}'></h3>
+<ng-template #showThenMessage><u style="color: green;"><b>Show then message</b></u></ng-template>
+<ng-template #showElseMessage><u style="color: green;"><b>Show else message</b></u></ng-template>
+<br><br>
+<hr>
+
+<h2>*ngSwitch</h2>
+<p>In this one ngSwitchCase and ngSwitchDefault is also used</p>
+<div [ngSwitch]="switchValue">
+  <div *ngSwitchCase="1">Value passed is :1</div>
+  <div *ngSwitchCase="2">Value passed is :2</div>
+  <div *ngSwitchCase="3">Value passed is :3</div>
+  <div *ngSwitchCase="4">Value passed is :4</div>
+  <div *ngSwitchCase="5">Value passed is :5</div>
+  <div *ngSwitchDefault>Value is default</div>
+</div>
+<br><br>
+<hr>
+
+<h2>*ngFor</h2>
+<table class="table table-striped">'
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Index</th>
+      <th>First</th>
+      <th>Last</th>
+      <th>Even</th>
+      <th>Odd</th>
+    </tr>
+  <tr *ngFor="let user of users; index as i; first as f; last as l; even as e; odd as o">
+    <td>{{user.id}}</td>
+    <td>{{user.name}}</td>
+    <td>{{i}}</td>
+    <td>{{f}}</td>
+    <td>{{l}}</td>
+    <td>{{e}}</td>
+    <td>{{o}}</td>
+  </tr>
+</table>
+
+<br><br>
+<hr>
+
+<h2>[ngStyle]</h2>
+<div [ngStyle]="{'color':'red', 'background-color':'#ddd'}">ngStyle starts from here</div>
+<div [ngStyle]="{color:colorval, 'font-size':'25px'}">ngStyle starts from here</div>
+
+<br><br>
+<hr>
+
+<h2>[ngClass]</h2>
+<div [ngClass]="'one'">ngClass Starting from here</div>
+<div [ngClass]="[clsName, clsName2]">ngClass Starting from here</div>

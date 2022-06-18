@@ -1,0 +1,94 @@
+<!-- Pipes -->
+
+<h1>Pipes</h1>
+<ol>
+  <li>Pipes are used to transform data.</li>
+  <li>Pipes will take data input and convert/transform into a desired form.</li>
+  <li>Pipes are written using the pipe operator(|)</li>
+  <li>We can apply pipes to any view/template and to any data input</li>
+</ol>
+
+<!-- Types of Pipes -->
+
+<h2>Types of Pipes</h2>
+<ul>
+  <li>Built in Pipes
+    <ul style="list-style-type: square;">
+      <li>Lowercase</li>
+      <li>Uppercase</li>
+      <li>Currency</li>
+      <li>Date</li>
+    </ul>
+  </li>
+  <li>Parametrized Pipes
+    <ul style="list-style-type: square;">
+      <li>We can pass one or more parameters to pipes</li>
+    </ul>
+  </li>
+  <li>Chaining Pipes
+    <ul style="list-style-type: square;">
+      <li>We can connect multiple pipes to a data input</li>
+    </ul>
+  </li>
+  <li>Custom Pipes
+    <ul style="list-style-type: square;">
+      <li>We can create our own custom pipes for various data formatting.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr>
+
+<!-- Built In Pipes & Parameterizing Pipes -->
+<h2>Built In Pipes & Parameterizing Pipes</h2>
+<ul>
+  <li>Lowercase</li>
+  <li>Uppercase</li>
+  <li>Percent</li>
+  <li>Currency</li>
+  <li>Date</li>
+  <li>JSON</li>
+</ul>
+<div>
+  Lowercase Pipe :- {{user.firstName | lowercase}}, <br>Uppercase Pipe :- {{user.lastName | uppercase}}
+</div>
+<div>
+  Date Pipe :- {{user.today | date}}
+</div>
+<div>
+  Currency Pipe Without Code :- {{user.salary | currency:'INR'}}<br>
+  Currency Pipe With Code :- {{user.salary | currency:'INR':'code'}}
+</div>
+<div>
+  JSON pipe :- {{user | json}}
+</div>
+
+<hr>
+
+<!-- Chaining Pipes -->
+<h2>Chaining Pipes</h2>
+<ul>
+  <li>Using multiple pipes on a data input is called as Chaining Pipes</li>
+  <li>We can pass one or more pipes to a data </li>
+</ul>
+<div>
+  Using two Pipes simultaneously :- {{user.today|date|uppercase}}
+</div>
+
+<hr>
+
+<!-- Custom Pipes -->
+<h2>Custom Pipes</h2>
+<ul>
+  <li>We can create our own custom pipes for various data formatting.</li>
+  <li>We can generate a new custom pipe using the CLI <br><code style="color: red; background-color: rgb(245, 206, 206); font-size: 18px;">Ng generate pipe pipe_name</code></li>
+  <li>Pipes needs to be added to the module - CLI does this when we auto generate</li>
+  <li>We need to import the <b>Pipe</b> and <b>PipeTransform</b> from the <b>@angular/core</b></li>
+  <li>Pipes are declared with the decorator <b>@pipe</b> and provide the <b>selector name</b></li>
+</ul>
+
+<div class="customPipe">
+  Square Root of 225:{{225 |sqrtTest}}<br>
+  Square Root of 25:{{25 |sqrtTest}}<br>
+  Square Root of 169:{{169 |sqrtTest}}
+</div>

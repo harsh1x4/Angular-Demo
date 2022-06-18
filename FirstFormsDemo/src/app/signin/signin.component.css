@@ -1,0 +1,4 @@
+/* First Way to perform form Validation in Template driven Interface */
+input.ng-touched.ng-invalid{
+    border: 2px solid red;
+}
